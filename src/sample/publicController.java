@@ -62,8 +62,17 @@ public class publicController implements Initializable {
         else stage.getScene().getWindow();
     }
 
+    @FXML
+    Button re = new Button();
 
+    @FXML
+    public void reserveButton(){
+        if(text.getText().equals("Your item is: \n" + um.displayItem(item))){
+            text.setText("Your item is reserved!");
+        }
+    }
     public void initialize(URL url, ResourceBundle resourceBundle) {
         tableView.setItems(t.getItems(ConnectionDB.collectionItem));
+        tableView.refresh();
     }
 }

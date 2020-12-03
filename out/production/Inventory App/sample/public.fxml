@@ -80,7 +80,7 @@
                            <children>
                               <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="209.0" prefWidth="486.0" spacing="30.0" style="-fx-background-color: #36454F;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <Button mnemonicParsing="false" style="-fx-background-color: #F7E7CE;" text="Reserve">
+                                    <Button fx:id="re" mnemonicParsing="false" onAction="#reserveButton" style="-fx-background-color: #F7E7CE;" text="Reserve">
                                        <font>
                                           <Font name="Verdana Bold Italic" size="12.0" />
                                        </font>

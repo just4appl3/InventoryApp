@@ -182,5 +182,6 @@ public class UserHandleController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         tableView.setItems(t.getUsers(ConnectionDB.collectionLogin));
+        tableView.refresh();
     }
 }
