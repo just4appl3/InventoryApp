@@ -1,16 +1,18 @@
 package Classes;
 
+//clasa cu atributele unui User
+
 public class User extends Person {
 
     public String username;
     public String password;
-    private String mail_adress;
+    private String mailAdressUser;
 
     public User(String firstName, String lastName, int age, String username, String password, String mail_adress) {
         super(firstName, lastName, age);
         this.username = username;
         this.password = password;
-        this.mail_adress = mail_adress;
+        this.mailAdressUser = mail_adress;
     }
 
     public User(String username) {
@@ -21,12 +23,12 @@ public class User extends Person {
         super();
     }
 
-    public String getMail_adress() {
-        return mail_adress;
+    public String getMailAdressUser() {
+        return mailAdressUser;
     }
 
-    public void setMail_adress(String mail_adress) {
-        this.mail_adress = mail_adress;
+    public void setMailAdressUser(String mailAdressU) {
+        this.mailAdressUser = mailAdressU;
     }
 
     @Override
@@ -36,7 +38,7 @@ public class User extends Person {
                 "Lastname = " + getLastName() + "\n" +
                 "Username = " + username + '\n' +
                 "Password = " + password + '\n' +
-                "Mail address = " + mail_adress + '\n' +
+                "Mail address = " + mailAdressUser + '\n' +
                 "Age = " + getAge() + "\n" +
                 '}';
     }

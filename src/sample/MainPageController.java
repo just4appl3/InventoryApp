@@ -1,24 +1,15 @@
 package sample;
 
-import com.sun.tools.javac.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.stage.Stage;
-
-import javax.swing.text.html.StyleSheet;
 import java.io.IOException;
 
 public class MainPageController {
     //GENERAL USE
     @FXML
-    private Stage stage = new Stage();
-
-    @FXML
-    private Button quitButton = new Button();
+    private final Stage stage = new Stage();
 
     @FXML
     private void publicButoonAction() throws IOException {

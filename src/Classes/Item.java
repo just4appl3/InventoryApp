@@ -1,6 +1,7 @@
 package Classes;
-
+//clasa folosita pentru a defini obiectele comercializate
 public class Item {
+    //am incercat ca atributele sa fie cat mai generale pentru a se plia pe mai multe tipuri de market-uri
     public String name;
     public Integer code;
     public Integer amount;

@@ -6,6 +6,7 @@ import org.bson.conversions.Bson;
 
 import static Classes.UserManager.getString;
 
+//interfata este utilizata pentru a clarifica atributiile unui Admin si pentru a le separa de cele ale unui User
 interface IAdmin {
     void AddItem(Item item);
 
@@ -30,8 +31,10 @@ interface IAdmin {
 
 public class AdminManager implements IAdmin {
 
-    ManagerDuplicate d = new ManagerDuplicate();
+    //variabila pentru a folosi functii care sunt la comun pentruAdmin si User
+    ManagerDuplicate managerDuplicate = new ManagerDuplicate();
 
+    //adaugare item in baza de date
     @Override
     public void AddItem(Item item) {
         Document d = new Document("Name", item.name)
@@ -41,6 +44,7 @@ public class AdminManager implements IAdmin {
         ConnectionDB.collectionItem.insertOne(d);
     }
 
+    //stergere item din baza de date
     @Override
     public void DeleteItem(Item item) {
         Document d = new Document("Name", item.name)
@@ -53,6 +57,7 @@ public class AdminManager implements IAdmin {
         }
     }
 
+    //functie pentru a gasi un item in baza de date
     @Override
     public boolean findItem(Item item) {
         boolean flag = true;
@@ -62,21 +67,24 @@ public class AdminManager implements IAdmin {
         return flag;
     }
 
+    //afisare item intr-un frame
     @Override
     public String displayItem(Item item) {
         return getString(item);
     }
 
+    //functii comuna cu User, se gasesc in clasa ManagerDuplicate
     @Override
     public void UpdateItem(Item item, Item item_up) {
-        d.UpdateItem(item, item_up);
+        managerDuplicate.UpdateItem(item, item_up);
     }
 
     @Override
     public void DeleteUser(User user) {
-        d.DeleteUser(user);
+        managerDuplicate.DeleteUser(user);
     }
 
+    //adaugare User in baza de date
     @Override
     public void AddUser(User user) {
         Document d = new Document("First Name", user.getFirstName())
@@ -84,10 +92,11 @@ public class AdminManager implements IAdmin {
                 .append("Age", user.getAge())
                 .append("Username", user.username)
                 .append("Password", user.password)
-                .append("Mail adress", user.getMail_adress());
+                .append("Mail adress", user.getMailAdressUser());
         ConnectionDB.collectionLogin.insertOne(d);
     }
 
+    //Modificare User in baza de date
     @Override
     public void UpdateUser(User user, User user_up) {
         Document query = new Document("Username", user.username);
@@ -99,7 +108,7 @@ public class AdminManager implements IAdmin {
                     .append("Age", user_up.getAge())
                     .append("Username", user_up.username)
                     .append("Password", user_up.password)
-                    .append("Mail adress", user_up.getMail_adress());
+                    .append("Mail adress", user_up.getMailAdressUser());
             Bson updateoperation = new Document("$set", updatedvalue);
             ConnectionDB.collectionLogin.updateOne(found, updateoperation);
         }
@@ -121,7 +130,7 @@ public class AdminManager implements IAdmin {
         if (found != null) {
             user.username = found.get("Username").toString();
             user.password = found.get("Password").toString();
-            user.setMail_adress(found.get("Mail adress").toString());
+            user.setMailAdressUser(found.get("Mail adress").toString());
             user.setFirstName(found.get("First Name").toString());
             user.setLastName(found.get("Last Name").toString());
             user.setAge(Integer.parseInt(found.get("Age").toString()));
@@ -129,3 +138,5 @@ public class AdminManager implements IAdmin {
         return user.toString();
     }
 }
+
+//toate functiile de adaugare, modificare si stergere sunt scrise pentru specificul bazei de date folosite, MongoDB

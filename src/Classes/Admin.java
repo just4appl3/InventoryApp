@@ -1,30 +1,33 @@
 package Classes;
-
+//clasa Admin este folosita pentru drepturile de administrare ca Admin, adica se pot manipula resursele umane cat si obiectele
 public class Admin extends Person {
 
-    public int Login_serial;
+    //datele de mai jos sunt datele pe care le-am rezut necesare pentru o astfel de persoana
+    public int loginSerial;
     public String adminID;
     public String password;
-    private String mail_adress;
+    private String mailAdress;
 
-    public Admin(String firstName, String lastName, int age, int login_serial, String adminID, String password, String mail_adress) {
+    //constructor
+    public Admin(String firstName, String lastName, int age, int loginSerial, String adminID, String password, String mail_adress) {
         super(firstName, lastName, age);
-        Login_serial = login_serial;
+        this.loginSerial = loginSerial;
         this.adminID = adminID;
         this.password = password;
-        this.mail_adress = mail_adress;
+        this.mailAdress = mail_adress;
     }
 
+    //constructor
     public Admin() {
 
     }
 
-    public String getMail_adress() {
-        return mail_adress;
+    public String getMailAdress() {
+        return mailAdress;
     }
 
-    public void setMail_adress(String mail_adress) {
-        this.mail_adress = mail_adress;
+    public void setMailAdress(String mailAdress) {
+        this.mailAdress = mailAdress;
     }
 
 }

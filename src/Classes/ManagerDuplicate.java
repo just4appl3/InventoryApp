@@ -10,6 +10,9 @@ interface IDuplicate {
     void DeleteUser(User user);
 }
 
+//functii folosite atat de User cat si de Admin
+//specifice bazei de date
+
 public class ManagerDuplicate implements IDuplicate {
 
     @Override
@@ -34,7 +37,7 @@ public class ManagerDuplicate implements IDuplicate {
                 .append("Age", user.getAge())
                 .append("Username", user.username)
                 .append("Password", user.password)
-                .append("Mail adress", user.getMail_adress());
+                .append("Mail adress", user.getMailAdressUser());
         Document found = (Document) ConnectionDB.collectionLogin.find(d).first();
         if (found != null) {
             ConnectionDB.collectionLogin.deleteOne(d);

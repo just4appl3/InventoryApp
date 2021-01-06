@@ -19,16 +19,16 @@ import java.util.ResourceBundle;
 public class publicController implements Initializable {
     //NECESSARY
     @FXML
-    private Stage stage = new Stage();
-    private Item item = new Item();
-    private UserManager um = new UserManager();
-    private DuplicateFunc t = new DuplicateFunc();
+    private final Stage stage = new Stage();
+    private final Item item = new Item();
+    private final UserManager um = new UserManager();
+    private final DuplicateFunc t = new DuplicateFunc();
 
 
     @FXML
-    private TextField searchInput = new TextField();
+    private final TextField searchInput = new TextField();
     @FXML
-    private TextArea text = new TextArea();
+    private final TextArea text = new TextArea();
 
     //TableView
     @FXML
@@ -53,8 +53,6 @@ public class publicController implements Initializable {
     }
 
     //QUIT BUTTON ACTION
-    @FXML
-    private Button quitButton = new Button();
 
     @FXML
     private void quitButtonAction() {

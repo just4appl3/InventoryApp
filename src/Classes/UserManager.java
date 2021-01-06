@@ -15,9 +15,11 @@ interface IUser {
     void DeleteUser(User user);
 }
 
+//defineste functiile pe care le poate avea un User
+
 public class UserManager implements IUser {
 
-    ManagerDuplicate d = new ManagerDuplicate();
+    ManagerDuplicate managerDuplicate = new ManagerDuplicate();
 
     public static String getString(Item item) {
         Document d = new Document("Name", item.name);
@@ -56,11 +58,11 @@ public class UserManager implements IUser {
 
     @Override
     public void UpdateItem(Item item, Item item_up) {
-        d.UpdateItem(item, item_up);
+        managerDuplicate.UpdateItem(item, item_up);
     }
 
     @Override
     public void DeleteUser(User user) {
-        d.DeleteUser(user);
+        managerDuplicate.DeleteUser(user);
     }
 }

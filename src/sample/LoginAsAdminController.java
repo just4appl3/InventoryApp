@@ -24,17 +24,17 @@ public class LoginAsAdminController implements Initializable {
     private Stage stage = new Stage();
 
     @FXML
-    private TextField serialInput = new TextField();
+    private final TextField serialInput = new TextField();
     @FXML
-    private TextField idInput = new TextField();
+    private final TextField idInput = new TextField();
     @FXML
-    private PasswordField passInput = new PasswordField();
+    private final PasswordField passInput = new PasswordField();
     @FXML
-    private TextField passInput_Visible= new TextField();
+    private final TextField passInput_Visible= new TextField();
     @FXML
-    private Button quitButton = new Button();
+    private final Button quitButton = new Button();
     @FXML
-    private CheckBox checkBox_Login = new CheckBox();
+    private final CheckBox checkBox_Login = new CheckBox();
 
     //QUIT BUTTON ACTION
     @FXML
@@ -59,7 +59,7 @@ public class LoginAsAdminController implements Initializable {
             AlertBox.display("Alert", "To login you must complete all fields!");
         else {
             Document d = new Document("Login serial", serialInput.getText().trim()).append("admin ID", idInput.getText().trim()).append("Password", passInput.getText().trim());
-            if (DuplicateFunc.verifyLogin(d, ConnectionDB.collectionAdmin, "Wrong Adimin ID or Login serial number or Password", "Alert!")) {
+            if (DuplicateFunc.verifyLogin(d, ConnectionDB.collectionAdmin, "Wrong Admin ID or Login serial number or Password", "Alert!")) {
                 Parent LoginAdminParent = FXMLLoader.load(getClass().getResource("AfterLoginAdmin.fxml"));
                 Main_App.window.getScene().setRoot(LoginAdminParent);
             }
@@ -73,7 +73,7 @@ public class LoginAsAdminController implements Initializable {
         Main_App.window.getScene().setRoot(LoginAdminParent);
     }
 
-    // CHACK BOX ACTION
+    // CHECK BOX ACTION
     @FXML
     private void checkBox_LoginAction() {
         check_box(checkBox_Login, passInput_Visible, passInput);

@@ -9,7 +9,6 @@ import javafx.scene.Parent;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -17,52 +16,48 @@ import java.util.ResourceBundle;
 
 public class AfterLoginUserController implements Initializable {
 
-    //GENERAL USE
-    @FXML
-    private Stage stage = new Stage();
-
     //NECESSARY
-    private User user = new User();
-    private Item item = new Item();
-    private Item itemToUP = new Item();
-    private UserManager um = new UserManager();
-    private AdminManager am = new AdminManager();
-    private DuplicateFunc t = new DuplicateFunc();
+    private final User user = new User();
+    private final Item item = new Item();
+    private final Item itemToUP = new Item();
+    private final UserManager um = new UserManager();
+    private final AdminManager am = new AdminManager();
+    private final DuplicateFunc t = new DuplicateFunc();
 
     //TEXT
     @FXML
-    private TextField usernameInput = new TextField();
+    private final TextField usernameInput = new TextField();
     @FXML
-    private TextField passwordInput = new TextField();
+    private final TextField passwordInput = new TextField();
     @FXML
-    private TextField firstnameInput = new TextField();
+    private final TextField firstnameInput = new TextField();
     @FXML
-    private TextField lastnameInput = new TextField();
+    private final TextField lastnameInput = new TextField();
     @FXML
-    private TextField mailInput = new TextField();
+    private final TextField mailInput = new TextField();
     @FXML
-    private TextField ageInput = new TextField();
+    private final TextField ageInput = new TextField();
 
 
     //Update
     @FXML
-    private TextField nameInputUP = new TextField();
+    private final TextField nameInputUP = new TextField();
     @FXML
-    private TextField codeInputUP = new TextField();
+    private final TextField codeInputUP = new TextField();
     @FXML
-    private TextField amountInputUP = new TextField();
+    private final TextField amountInputUP = new TextField();
     @FXML
-    private TextField priceInputUP = new TextField();
+    private final TextField priceInputUP = new TextField();
     @FXML
-    private TextField codeInput_to_UP = new TextField();
+    private final TextField codeInput_to_UP = new TextField();
 
 
     @FXML
-    private TextField searchInput = new TextField();
+    private final TextField searchInput = new TextField();
     @FXML
-    private TextArea text = new TextArea();
+    private final TextArea text = new TextArea();
     @FXML
-    private TextArea text2 = new TextArea();
+    private final TextArea text2 = new TextArea();
 
     //TableView
     @FXML
@@ -71,7 +66,7 @@ public class AfterLoginUserController implements Initializable {
     static void UserAction(User user, TextField usernameInput, TextField passwordInput, TextField mailInput, TextField firstnameInput, TextField lastnameInput, TextField ageInput) {
         user.username = usernameInput.getText().trim();
         user.password = passwordInput.getText().trim();
-        user.setMail_adress(mailInput.getText().trim());
+        user.setMailAdressUser(mailInput.getText().trim());
         user.setFirstName(firstnameInput.getText().trim());
         user.setLastName(lastnameInput.getText().trim());
         user.setAge((Integer.parseInt(ageInput.getText().trim())));
@@ -131,7 +126,7 @@ public class AfterLoginUserController implements Initializable {
         }
     }
 
-    //SINGOUT
+    //EXIT
     @FXML
     private void singOutButton() throws IOException {
         if (ConfirmBox.display("Alert!", " Are you sure you want to sing out?")) {
@@ -151,7 +146,7 @@ public class AfterLoginUserController implements Initializable {
                 UserAction(user, usernameInput, passwordInput, mailInput, firstnameInput, lastnameInput, ageInput);
                 if (DuplicateFunc.isValidMail(mailInput.getText().trim())) {
                     if (am.findUser(user)) {
-                        if (ConfirmBox.display("Alert", "Are you sure you want to delet yout account?")) {
+                        if (ConfirmBox.display("Alert", "Are you sure you want to delete your account?")) {
                             um.DeleteUser(user);
                             AlertBox.display("Alert", "Account deleted!");
                             Parent LoginAdminParent = FXMLLoader.load(getClass().getResource("sample.fxml"));

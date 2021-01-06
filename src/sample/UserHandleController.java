@@ -19,42 +19,42 @@ import java.util.ResourceBundle;
 public class UserHandleController implements Initializable {
 
     //NECESSARY
-    private User user = new User();
-    private User user_UP = new User();
-    private AdminManager am = new AdminManager();
-    private DuplicateFunc t = new DuplicateFunc();
+    private final User user = new User();
+    private final User user_UP = new User();
+    private final AdminManager am = new AdminManager();
+    private final DuplicateFunc t = new DuplicateFunc();
 
     @FXML
-    private TextField usernameInput = new TextField();
+    private final TextField usernameInput = new TextField();
     @FXML
-    private TextField passwordInput = new TextField();
+    private final TextField passwordInput = new TextField();
     @FXML
-    private TextField firstnameInput = new TextField();
+    private final TextField firstnameInput = new TextField();
     @FXML
-    private TextField lastnameInput = new TextField();
+    private final TextField lastnameInput = new TextField();
     @FXML
-    private TextField mailInput = new TextField();
+    private final TextField mailInput = new TextField();
     @FXML
-    private TextField ageInput = new TextField();
+    private final TextField ageInput = new TextField();
 
     @FXML
-    private TextField usernameInput1 = new TextField();
+    private final TextField usernameInput1 = new TextField();
     @FXML
-    private TextField passwordInput1 = new TextField();
+    private final TextField passwordInput1 = new TextField();
     @FXML
-    private TextField firstnameInput1 = new TextField();
+    private final TextField firstnameInput1 = new TextField();
     @FXML
-    private TextField lastnameInput1 = new TextField();
+    private final TextField lastnameInput1 = new TextField();
     @FXML
-    private TextField mailInput1 = new TextField();
+    private final TextField mailInput1 = new TextField();
     @FXML
-    private TextField ageInput1 = new TextField();
+    private final TextField ageInput1 = new TextField();
 
     //search
     @FXML
-    private TextField searchInput = new TextField();
+    private final TextField searchInput = new TextField();
     @FXML
-    private TextArea text = new TextArea();
+    private final TextArea text = new TextArea();
 
     //TABLE VIEW
     @FXML
@@ -134,7 +134,7 @@ public class UserHandleController implements Initializable {
                     am.AddUser(user);
                     tableView.getItems().clear();
                     tableView.setItems(t.getUsers(ConnectionDB.collectionLogin));
-                    AlertBox.display("Alert", "User addead!");
+                    AlertBox.display("Alert", "User added!");
                 } catch (NumberFormatException ex) {
                     AlertBox.display("Alert", "Error: " + ageInput.getText().trim().toUpperCase() + " is not a number!");
                 }
@@ -170,7 +170,7 @@ public class UserHandleController implements Initializable {
         Main_App.window.getScene().setRoot(pane);
     }
 
-    //SINGOUT
+    //SNOUT
     @FXML
     private void singOutButton() throws IOException {
         FXMLLoader loader = new FXMLLoader();

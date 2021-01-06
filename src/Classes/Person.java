@@ -1,5 +1,7 @@
 package Classes;
 
+//clasa abstracta din care se trag glasele principale care denumesc persoane
+
 public abstract class Person {
     private String firstName;
     private String lastName;

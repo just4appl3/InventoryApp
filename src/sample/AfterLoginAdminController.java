@@ -21,44 +21,44 @@ import java.util.ResourceBundle;
 
 public class AfterLoginAdminController implements Initializable {
 
-    //NECCESARY
-    private Item item = new Item();
-    private Item itemToUP = new Item();
-    private AdminManager am = new AdminManager();
-    private DuplicateFunc t = new DuplicateFunc();
-    private UserManager um = new UserManager();
+    //necessary
+    private final Item item = new Item();
+    private final Item itemToUP = new Item();
+    private final AdminManager am = new AdminManager();
+    private final DuplicateFunc t = new DuplicateFunc();
+    private final UserManager um = new UserManager();
 
     //FIRST INPUT
     @FXML
-    private TextField nameInput = new TextField();
+    private final TextField nameInput = new TextField();
     @FXML
-    private TextField codeInput = new TextField();
+    private final TextField codeInput = new TextField();
     @FXML
-    private TextField amountInput = new TextField();
+    private final TextField amountInput = new TextField();
     @FXML
-    private TextField priceInput = new TextField();
+    private final TextField priceInput = new TextField();
 
     //UPDATE
     @FXML
-    private TextField nameInputUP = new TextField();
+    private final TextField nameInputUP = new TextField();
     @FXML
-    private TextField codeInputUP = new TextField();
+    private final TextField codeInputUP = new TextField();
     @FXML
-    private TextField amountInputUP = new TextField();
+    private final TextField amountInputUP = new TextField();
     @FXML
-    private TextField priceInputUP = new TextField();
+    private final TextField priceInputUP = new TextField();
     @FXML
-    private TextField codeInput_to_UP = new TextField();
+    private final TextField codeInput_to_UP = new TextField();
 
     //SEARCH
     @FXML
-    private TextField searchInput = new TextField();
+    private final TextField searchInput = new TextField();
     @FXML
-    private TextArea text = new TextArea();
+    private final TextArea text = new TextArea();
 
     //TEXT AREA
     @FXML
-    private TextArea text2 = new TextArea();
+    private final TextArea text2 = new TextArea();
 
     //TableView
     @FXML
@@ -101,7 +101,7 @@ public class AfterLoginAdminController implements Initializable {
             try {
                 itemToUP.code = Integer.parseInt(codeInput_to_UP.getText().trim());
                 if (!um.findItembyCode(itemToUP))
-                    AlertBox.display("Alert", "Item dosen't exist!");
+                    AlertBox.display("Alert", "Item doesn't exist!");
                 else {
                     if (nameInputUP.getText().equals("") || codeInputUP.getText().equals("") || amountInputUP.getText().equals("") || priceInputUP.getText().equals(""))
                         AlertBox.display("Alert", "You must complete all fields!");
@@ -184,7 +184,7 @@ public class AfterLoginAdminController implements Initializable {
         Main_App.window.getScene().setRoot(pane);
     }
 
-    //SINGOUT
+    //SNOUT
     @FXML
     private void singOutButtonAction() throws IOException {
         if (ConfirmBox.display("Alert!", " Are you sure you want to sing out?")) {
