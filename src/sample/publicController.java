@@ -19,16 +19,16 @@ import java.util.ResourceBundle;
 public class publicController implements Initializable {
     //NECESSARY
     @FXML
-    private final Stage stage = new Stage();
-    private final Item item = new Item();
-    private final UserManager um = new UserManager();
-    private final DuplicateFunc t = new DuplicateFunc();
+    private Stage stage = new Stage();
+    private Item item = new Item();
+    private UserManager um = new UserManager();
+    private DuplicateFunc t = new DuplicateFunc();
 
 
     @FXML
-    private final TextField searchInput = new TextField();
+    private TextField searchInput = new TextField();
     @FXML
-    private final TextArea text = new TextArea();
+    private TextArea text = new TextArea();
 
     //TableView
     @FXML
@@ -38,7 +38,7 @@ public class publicController implements Initializable {
     //SEARCH
     @FXML
     private void search() {
-        if (searchInput.getText().equals("")) AlertBox.display("Alert", "You must complete all fields!");
+        if (searchInput.getText().equals("")){ AlertBox.display("Alert", "You must complete all fields!");}
         else {
             item.name = searchInput.getText().trim();
             if (!um.findItem(item)) text.setText("Item not found!");

@@ -19,42 +19,42 @@ import java.util.ResourceBundle;
 public class UserHandleController implements Initializable {
 
     //NECESSARY
-    private final User user = new User();
-    private final User user_UP = new User();
-    private final AdminManager am = new AdminManager();
-    private final DuplicateFunc t = new DuplicateFunc();
+    private User user = new User();
+    private User user_UP = new User();
+    private AdminManager am = new AdminManager();
+    private DuplicateFunc t = new DuplicateFunc();
 
     @FXML
-    private final TextField usernameInput = new TextField();
+    private TextField usernameInput = new TextField();
     @FXML
-    private final TextField passwordInput = new TextField();
+    private TextField passwordInput = new TextField();
     @FXML
-    private final TextField firstnameInput = new TextField();
+    private TextField firstnameInput = new TextField();
     @FXML
-    private final TextField lastnameInput = new TextField();
+    private TextField lastnameInput = new TextField();
     @FXML
-    private final TextField mailInput = new TextField();
+    private TextField mailInput = new TextField();
     @FXML
-    private final TextField ageInput = new TextField();
+    private TextField ageInput = new TextField();
 
     @FXML
-    private final TextField usernameInput1 = new TextField();
+    private TextField usernameInput1 = new TextField();
     @FXML
-    private final TextField passwordInput1 = new TextField();
+    private TextField passwordInput1 = new TextField();
     @FXML
-    private final TextField firstnameInput1 = new TextField();
+    private TextField firstnameInput1 = new TextField();
     @FXML
-    private final TextField lastnameInput1 = new TextField();
+    private TextField lastnameInput1 = new TextField();
     @FXML
-    private final TextField mailInput1 = new TextField();
+    private TextField mailInput1 = new TextField();
     @FXML
-    private final TextField ageInput1 = new TextField();
+    private TextField ageInput1 = new TextField();
 
     //search
     @FXML
-    private final TextField searchInput = new TextField();
+    private TextField searchInput = new TextField();
     @FXML
-    private final TextArea text = new TextArea();
+    private TextArea text = new TextArea();
 
     //TABLE VIEW
     @FXML

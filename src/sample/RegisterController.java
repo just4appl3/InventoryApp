@@ -22,28 +22,28 @@ public class RegisterController implements Initializable {
     //GENERAL USE
     @FXML
     private Stage stage = new Stage();
-    private final User u = new User();
-    private final AdminManager am = new AdminManager();
+    private User u = new User();
+    private AdminManager am = new AdminManager();
 
     //LOGIN SCENE
     @FXML
-    private final TextField usernameInput = new TextField();
+    private TextField usernameInput = new TextField();
     @FXML
-    private final TextField firstnameInput = new TextField();
+    private TextField firstnameInput = new TextField();
     @FXML
-    private final TextField lastnameInput = new TextField();
+    private TextField lastnameInput = new TextField();
     @FXML
-    private final TextField mailInput = new TextField();
+    private TextField mailInput = new TextField();
     @FXML
-    private final TextField ageInput = new TextField();
+    private TextField ageInput = new TextField();
     @FXML
-    private final PasswordField passInput = new PasswordField();
+    private PasswordField passInput = new PasswordField();
     @FXML
-    private final TextField passInput_Visible= new TextField();
+    private TextField passInput_Visible= new TextField();
     @FXML
-    private final Button quitButton = new Button();
+    private Button quitButton = new Button();
     @FXML
-    private final CheckBox checkBox_Register = new CheckBox();
+    private CheckBox checkBox_Register = new CheckBox();
 
     //CHECK BOX ACTION
     @FXML

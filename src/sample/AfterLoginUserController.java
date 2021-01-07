@@ -17,47 +17,47 @@ import java.util.ResourceBundle;
 public class AfterLoginUserController implements Initializable {
 
     //NECESSARY
-    private final User user = new User();
-    private final Item item = new Item();
-    private final Item itemToUP = new Item();
-    private final UserManager um = new UserManager();
-    private final AdminManager am = new AdminManager();
-    private final DuplicateFunc t = new DuplicateFunc();
+    private User user = new User();
+    private Item item = new Item();
+    private Item itemToUP = new Item();
+    private UserManager um = new UserManager();
+    private AdminManager am = new AdminManager();
+    private DuplicateFunc t = new DuplicateFunc();
 
     //TEXT
     @FXML
-    private final TextField usernameInput = new TextField();
+    private TextField usernameInput = new TextField();
     @FXML
-    private final TextField passwordInput = new TextField();
+    private TextField passwordInput = new TextField();
     @FXML
-    private final TextField firstnameInput = new TextField();
+    private TextField firstnameInput = new TextField();
     @FXML
-    private final TextField lastnameInput = new TextField();
+    private TextField lastnameInput = new TextField();
     @FXML
-    private final TextField mailInput = new TextField();
+    private TextField mailInput = new TextField();
     @FXML
-    private final TextField ageInput = new TextField();
+    private TextField ageInput = new TextField();
 
 
     //Update
     @FXML
-    private final TextField nameInputUP = new TextField();
+    private TextField nameInputUP = new TextField();
     @FXML
-    private final TextField codeInputUP = new TextField();
+    private TextField codeInputUP = new TextField();
     @FXML
-    private final TextField amountInputUP = new TextField();
+    private TextField amountInputUP = new TextField();
     @FXML
-    private final TextField priceInputUP = new TextField();
+    private TextField priceInputUP = new TextField();
     @FXML
-    private final TextField codeInput_to_UP = new TextField();
+    private TextField codeInput_to_UP = new TextField();
 
 
     @FXML
-    private final TextField searchInput = new TextField();
+    private TextField searchInput = new TextField();
     @FXML
-    private final TextArea text = new TextArea();
+    private TextArea text = new TextArea();
     @FXML
-    private final TextArea text2 = new TextArea();
+    private TextArea text2 = new TextArea();
 
     //TableView
     @FXML

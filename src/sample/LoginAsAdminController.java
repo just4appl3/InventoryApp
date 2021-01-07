@@ -24,17 +24,17 @@ public class LoginAsAdminController implements Initializable {
     private Stage stage = new Stage();
 
     @FXML
-    private final TextField serialInput = new TextField();
+    private TextField serialInput = new TextField();
     @FXML
-    private final TextField idInput = new TextField();
+    private TextField idInput = new TextField();
     @FXML
-    private final PasswordField passInput = new PasswordField();
+    private PasswordField passInput = new PasswordField();
     @FXML
-    private final TextField passInput_Visible= new TextField();
+    private TextField passInput_Visible= new TextField();
     @FXML
-    private final Button quitButton = new Button();
+    private Button quitButton = new Button();
     @FXML
-    private final CheckBox checkBox_Login = new CheckBox();
+    private CheckBox checkBox_Login = new CheckBox();
 
     //QUIT BUTTON ACTION
     @FXML

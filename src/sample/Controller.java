@@ -24,15 +24,15 @@ public class Controller implements Initializable {
     private Stage stage = new Stage();
     //LOGIN SCENE
     @FXML
-    private final TextField usernameInput = new TextField();
+    private TextField usernameInput = new TextField();
     @FXML
-    private final PasswordField passInput = new PasswordField();
+    private PasswordField passInput = new PasswordField();
     @FXML
-    private final TextField passInput_Visible= new TextField();
+    private TextField passInput_Visible= new TextField();
     @FXML
-    private final Button quitButton = new Button();
+    private Button quitButton = new Button();
     @FXML
-    private final CheckBox checkBox_Login = new CheckBox();
+    private CheckBox checkBox_Login = new CheckBox();
 
     @FXML
     private void backButoonAction() throws IOException {

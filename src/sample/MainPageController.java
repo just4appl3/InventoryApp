@@ -9,7 +9,7 @@ import java.io.IOException;
 public class MainPageController {
     //GENERAL USE
     @FXML
-    private final Stage stage = new Stage();
+    private Stage stage = new Stage();
 
     @FXML
     private void publicButoonAction() throws IOException {
