@@ -59,6 +59,15 @@ public class Controller implements Initializable {
 
     @FXML
     private void loginButtonAction() throws IOException {
+        if(checkBox_Login.isSelected()){
+            pass(passInput_Visible);
+        }
+        else{
+            pass(passInput);
+        }
+    }
+
+    private void pass(TextField passInput) throws IOException {
         if (usernameInput.getText().equals("") || passInput.getText().equals(""))
             AlertBox.display("Alert", "To login you must complete all fields!");
         else {

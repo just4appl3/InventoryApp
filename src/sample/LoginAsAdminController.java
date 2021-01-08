@@ -55,10 +55,19 @@ public class LoginAsAdminController implements Initializable {
     //LOGIN BUTTON ACTION
     @FXML
     private void loginButtonAction() throws IOException {
-        if (serialInput.getText().equals("") || idInput.getText().equals("") || passInput.getText().equals(""))
+        if(checkBox_Login.isSelected()){
+            pass(passInput_Visible);
+        }
+        else{
+            pass(passInput);
+        }
+    }
+
+    private void pass(TextField passInput_visible) throws IOException {
+        if (serialInput.getText().equals("") || idInput.getText().equals("") || passInput_visible.getText().equals(""))
             AlertBox.display("Alert", "To login you must complete all fields!");
         else {
-            Document d = new Document("Login serial", serialInput.getText().trim()).append("admin ID", idInput.getText().trim()).append("Password", passInput.getText().trim());
+            Document d = new Document("Login serial", serialInput.getText().trim()).append("admin ID", idInput.getText().trim()).append("Password", passInput_visible.getText().trim());
             if (DuplicateFunc.verifyLogin(d, ConnectionDB.collectionAdmin, "Wrong Admin ID or Login serial number or Password", "Alert!")) {
                 Parent LoginAdminParent = FXMLLoader.load(getClass().getResource("AfterLoginAdmin.fxml"));
                 Main_App.window.getScene().setRoot(LoginAdminParent);

@@ -12,6 +12,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import javax.swing.event.ChangeListener;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -23,6 +24,7 @@ public class publicController implements Initializable {
     private Item item = new Item();
     private UserManager um = new UserManager();
     private DuplicateFunc t = new DuplicateFunc();
+    private Admin admin = new Admin();
 
 
     @FXML
@@ -66,9 +68,20 @@ public class publicController implements Initializable {
     @FXML
     public void reserveButton(){
         if(text.getText().equals("Your item is: \n" + um.displayItem(item))){
-            text.setText("Your item is reserved!");
+            if(item.amount <= 0){
+                text.setText("Sold out!");
+            }
+            else{
+                text.setText("Your item is reserved!");
+                Item itemToUP = item;
+                itemToUP.amount = item.amount - 1;
+                um.UpdateItem(item, itemToUP);
+                tableView.getItems().clear();
+                tableView.setItems(t.getItems(ConnectionDB.collectionItem));
+            }
         }
     }
+
     public void initialize(URL url, ResourceBundle resourceBundle) {
         tableView.setItems(t.getItems(ConnectionDB.collectionItem));
         tableView.refresh();

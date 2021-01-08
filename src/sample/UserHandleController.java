@@ -77,7 +77,15 @@ public class UserHandleController implements Initializable {
         if (searchInput.getText().equals("")) AlertBox.display("Alert", "You must complete all fields!");
         else {
             user.username = searchInput.getText().trim();
-            if (am.findUser(user)) text.setText("User found! \n" + am.displayUser(user));
+            if (am.findUser(user)) {
+                text.setText("User found! \n" + am.displayUser(user));
+                usernameInput1.setText(user.username);
+                passwordInput1.setText(user.password);
+                mailInput1.setText(user.getMailAdressUser());
+                lastnameInput1.setText(user.getLastName());
+                firstnameInput1.setText(user.getFirstName());
+                ageInput1.setText(String.valueOf(user.getAge()));
+            }
             else text.setText("User not found! \n");
         }
     }

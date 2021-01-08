@@ -80,11 +80,20 @@ public class RegisterController implements Initializable {
     //REGISTER BUTTON ACTION
     @FXML
     private void registerButtonAction() {
-        if (usernameInput.getText().equals("") || passInput.getText().equals("") || mailInput.getText().equals("") || firstnameInput.getText().equals("")
+        if(checkBox_Register.isSelected()){
+            pass(passInput_Visible);
+        }
+        else{
+            pass(passInput);
+        }
+    }
+
+    private void pass(TextField passInput_visible) {
+        if (usernameInput.getText().equals("") || passInput_visible.getText().equals("") || mailInput.getText().equals("") || firstnameInput.getText().equals("")
                 || lastnameInput.getText().equals("") || ageInput.getText().equals(""))
             AlertBox.display("Alert", "To register you must complete all fields!");
         else {
-            if (!DuplicateFunc.isValid(passInput.getText()))
+            if (!DuplicateFunc.isValid(passInput_visible.getText()))
                 AlertBox.display("Alert", "Password must contain: \n " +
                         "-at least 8 characters;\n" +
                         "-at least an Uppercase;\n " +
@@ -94,7 +103,7 @@ public class RegisterController implements Initializable {
                 AlertBox.display("Alert", "Incorrect mail address!");
             else {
                 try {
-                    AfterLoginUserController.UserAction(u, usernameInput, passInput, mailInput, firstnameInput, lastnameInput, ageInput);
+                    AfterLoginUserController.UserAction(u, usernameInput, passInput_visible, mailInput, firstnameInput, lastnameInput, ageInput);
                     am.AddUser(u);
 
                     AlertBox.display("Congratulations", "You registered successfully");
