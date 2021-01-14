@@ -10,6 +10,7 @@ import sample.AlertBox;
 import java.util.regex.Pattern;
 
 //clasa a fost scrisa pentru a separa functiile statice folosite pe tot parcursul programului
+// dar si functiile pentru popularea ObservableList care vor fi afisate in TableView
 public class DuplicateFunc {
 
     public ObservableList<Item> duplicate = FXCollections.observableArrayList();
